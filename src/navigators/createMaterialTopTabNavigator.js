@@ -136,3 +136,5 @@ class MaterialTabView extends React.PureComponent<Props> {
 }
 
 export default createTabNavigator(MaterialTabView);
+
+export { MaterialTabView }

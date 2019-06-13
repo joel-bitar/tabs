@@ -12,6 +12,10 @@ module.exports = {
     return require('./navigators/createMaterialTopTabNavigator').default;
   },
 
+  get MaterialTabView() {
+    return require('./navigators/createMaterialTopTabNavigator').MaterialTabView;
+  },
+
   /**
    * Views
    */
