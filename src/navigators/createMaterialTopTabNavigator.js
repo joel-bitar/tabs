@@ -129,7 +129,7 @@ class MaterialTabView extends React.PureComponent<Props, State> {
   };
 
   _handleSwipeStart = () => {
-    const { navigation, lazy } = this.props;
+    const { navigation, lazy, onSwipeStart } = this.props;
 
     if (lazy) {
       this.setState({
@@ -145,6 +145,10 @@ class MaterialTabView extends React.PureComponent<Props, State> {
           ]),
         ],
       });
+    }
+
+    if (typeof onSwipeStart === 'function') {
+      onSwipeStart = swipeEnabled();
     }
   };
 
@@ -267,3 +271,5 @@ class MaterialTabView extends React.PureComponent<Props, State> {
 polyfill(MaterialTabView);
 
 export default createTabNavigator(MaterialTabView);
+
+export { MaterialTabView }
