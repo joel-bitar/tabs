@@ -148,7 +148,7 @@ class MaterialTabView extends React.PureComponent<Props, State> {
     }
 
     if (typeof onSwipeStart === 'function') {
-      onSwipeStart = swipeEnabled();
+      onSwipeStart()
     }
   };
 
@@ -240,8 +240,8 @@ class MaterialTabView extends React.PureComponent<Props, State> {
         ? this.props.swipeEnabled
         : options.swipeEnabled;
 
-    if (typeof onSwipeStart === 'function') {
-      onSwipeStart()
+    if (typeof swipeEnabled === 'function') {
+      swipeEnabled = swipeEnabled(state);
     }
 
     if (animationEnabled === false && swipeEnabled === false) {
